@@ -1,0 +1,36 @@
+C:\Users\HUY\source\repos\QuanLyThuVien\QuanLyThuVien\bin\Debug\QuanLyThuVien.exe.config
+C:\Users\HUY\source\repos\QuanLyThuVien\QuanLyThuVien\bin\Debug\QuanLyThuVien.exe
+C:\Users\HUY\source\repos\QuanLyThuVien\QuanLyThuVien\bin\Debug\QuanLyThuVien.pdb
+C:\Users\HUY\source\repos\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.csprojResolveAssemblyReference.cache
+C:\Users\HUY\source\repos\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.GUI.UC.frmChiTietPhieuMuon.resources
+C:\Users\HUY\source\repos\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.GUI.UC.frmNhanVien.resources
+C:\Users\HUY\source\repos\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.GUI.UC.frmNhaXuatBan.resources
+C:\Users\HUY\source\repos\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.GUI.UC.frmPhieuMuon.resources
+C:\Users\HUY\source\repos\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.GUI.UC.frmSach.resources
+C:\Users\HUY\source\repos\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.GUI.UC.frmSinhVien.resources
+C:\Users\HUY\source\repos\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.GUI.UC.frmTacGia.resources
+C:\Users\HUY\source\repos\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.GUI.UC.frmTheLoai.resources
+C:\Users\HUY\source\repos\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.GUI.Menu.resources
+C:\Users\HUY\source\repos\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.Properties.Resources.resources
+C:\Users\HUY\source\repos\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.csproj.GenerateResource.cache
+C:\Users\HUY\source\repos\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.csproj.CoreCompileInputs.cache
+C:\Users\HUY\source\repos\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.exe
+C:\Users\HUY\source\repos\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.pdb
+D:\Nam3_Ki2\Thực tập nhóm_TH14\GIT\QLTV\QuanLyThuVien\QuanLyThuVien\bin\Debug\QuanLyThuVien.exe.config
+D:\Nam3_Ki2\Thực tập nhóm_TH14\GIT\QLTV\QuanLyThuVien\QuanLyThuVien\bin\Debug\QuanLyThuVien.exe
+D:\Nam3_Ki2\Thực tập nhóm_TH14\GIT\QLTV\QuanLyThuVien\QuanLyThuVien\bin\Debug\QuanLyThuVien.pdb
+D:\Nam3_Ki2\Thực tập nhóm_TH14\GIT\QLTV\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.csprojResolveAssemblyReference.cache
+D:\Nam3_Ki2\Thực tập nhóm_TH14\GIT\QLTV\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.GUI.UC.frmChiTietPhieuMuon.resources
+D:\Nam3_Ki2\Thực tập nhóm_TH14\GIT\QLTV\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.GUI.UC.frmNhanVien.resources
+D:\Nam3_Ki2\Thực tập nhóm_TH14\GIT\QLTV\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.GUI.UC.frmNhaXuatBan.resources
+D:\Nam3_Ki2\Thực tập nhóm_TH14\GIT\QLTV\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.GUI.UC.frmPhieuMuon.resources
+D:\Nam3_Ki2\Thực tập nhóm_TH14\GIT\QLTV\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.GUI.UC.frmSach.resources
+D:\Nam3_Ki2\Thực tập nhóm_TH14\GIT\QLTV\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.GUI.UC.frmSinhVien.resources
+D:\Nam3_Ki2\Thực tập nhóm_TH14\GIT\QLTV\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.GUI.UC.frmTacGia.resources
+D:\Nam3_Ki2\Thực tập nhóm_TH14\GIT\QLTV\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.GUI.UC.frmTheLoai.resources
+D:\Nam3_Ki2\Thực tập nhóm_TH14\GIT\QLTV\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.GUI.Menu.resources
+D:\Nam3_Ki2\Thực tập nhóm_TH14\GIT\QLTV\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.Properties.Resources.resources
+D:\Nam3_Ki2\Thực tập nhóm_TH14\GIT\QLTV\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.csproj.GenerateResource.cache
+D:\Nam3_Ki2\Thực tập nhóm_TH14\GIT\QLTV\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.csproj.CoreCompileInputs.cache
+D:\Nam3_Ki2\Thực tập nhóm_TH14\GIT\QLTV\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.exe
+D:\Nam3_Ki2\Thực tập nhóm_TH14\GIT\QLTV\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.pdb
