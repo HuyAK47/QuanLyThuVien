@@ -53,6 +53,15 @@ namespace QuanLyThuVien.GUI.UC
             lsvChiTietPM.Enabled = false;
         }
 
+        public void resetControl()
+        {
+            txtMaCTPM.ResetText();
+            txtMaPM.ResetText();
+            txtMaSach.ResetText();
+            txtSoLuong.ResetText();
+            txtTrangThai.ResetText();
+        }
+
         public void showLsvCTPM()
         {
           
@@ -73,6 +82,7 @@ namespace QuanLyThuVien.GUI.UC
         private void btnThem_Click(object sender, EventArgs e)
         {
             kt = false;
+            resetControl();
             openControl();
             btnSua.Enabled = false;
             btnXoa.Enabled = false;
@@ -127,6 +137,7 @@ namespace QuanLyThuVien.GUI.UC
         private void btnHuy_Click(object sender, EventArgs e)
         {
             lockControl();
+            resetControl();
         }
     }
 }

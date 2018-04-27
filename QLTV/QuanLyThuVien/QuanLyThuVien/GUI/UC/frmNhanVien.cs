@@ -60,6 +60,18 @@ namespace QuanLyThuVien.GUI.UC
             lsvNhanVien.Enabled = false;
         }
 
+        public void resetControl()
+        {
+            txtMaNV.ResetText();
+            txtDiaChi.ResetText();
+            txtEmail.ResetText();
+            txtGioiTinh.ResetText();
+            txtLuong.ResetText();
+            txtNgaySinh.ResetText();
+            txtSDT.ResetText();
+            txtTenNV.ResetText();
+        }
+
         public string formatDate(string dt)
         {
             DateTime dateTime = DateTime.Parse(dt);
@@ -91,6 +103,7 @@ namespace QuanLyThuVien.GUI.UC
         private void btnThem_Click_1(object sender, EventArgs e)
         {
             kt = true;
+            resetControl();
             openControl();
             btnSua.Enabled = false;
             btnXoa.Enabled = false;

@@ -59,6 +59,18 @@ namespace QuanLyThuVien.GUI.UC
             lsvSinhVien.Enabled = false;
         }
 
+        public void resetControl()
+        {
+            txtMaSV.ResetText();
+            txtDiaChi.ResetText();
+            txtEmail.ResetText();
+            txtGioiTinh.ResetText();
+            txtHanThe.ResetText();
+            txtNgaySinh.ResetText();
+            txtSDT.ResetText();
+            txtTenSV.ResetText();
+        }
+
         public string formatDate(string dt)
         {
             DateTime dateTime = DateTime.Parse(dt);
@@ -81,7 +93,7 @@ namespace QuanLyThuVien.GUI.UC
                 item.SubItems.Add(dr["DiaChi"].ToString());
                 item.SubItems.Add(dr["SDT"].ToString());
                 item.SubItems.Add(dr["Email"].ToString());
-                item.SubItems.Add(dr["HanThe"].ToString());
+                item.SubItems.Add(formatDate(dr["HanThe"].ToString()));
                 lsvSinhVien.Items.Add(item);
             }
         }
@@ -89,6 +101,7 @@ namespace QuanLyThuVien.GUI.UC
         private void btnThem_Click(object sender, EventArgs e)
         {
             kt = true;
+            resetControl();
             openControl();
             btnSua.Enabled = false;
             btnXoa.Enabled = false;

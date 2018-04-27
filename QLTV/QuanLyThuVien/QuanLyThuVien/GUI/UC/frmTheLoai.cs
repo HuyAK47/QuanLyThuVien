@@ -47,6 +47,12 @@ namespace QuanLyThuVien.GUI.UC
             lsvTheLoai.Enabled = false;
         }
 
+        public void resetControl()
+        {
+            txtMaLoaiSach.ResetText();
+            txtTenTheLoai.ResetText();
+        }
+
         public void showLsvTheLoai()
         {
 
@@ -64,6 +70,7 @@ namespace QuanLyThuVien.GUI.UC
         private void btnThem_Click(object sender, EventArgs e)
         {
             kt = true;
+            resetControl();
             openControl();
             btnSua.Enabled = false;
             btnXoa.Enabled = false;

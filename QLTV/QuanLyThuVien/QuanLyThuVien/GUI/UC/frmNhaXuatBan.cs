@@ -51,6 +51,14 @@ namespace QuanLyThuVien.GUI.UC
             lsvNXB.Enabled = false;
         }
 
+        public void resetControl()
+        {
+            txtMaNXB.ResetText();
+            txtDiaChi.ResetText();
+            txtSDT.ResetText();
+            txtTenNXB.ResetText();
+        }
+
         public void showLsvNXB()
         {
 
@@ -70,6 +78,7 @@ namespace QuanLyThuVien.GUI.UC
         private void btnThem_Click(object sender, EventArgs e)
         {
             kt = true;
+            resetControl();
             openControl();
             btnSua.Enabled = false;
             btnXoa.Enabled = false;
