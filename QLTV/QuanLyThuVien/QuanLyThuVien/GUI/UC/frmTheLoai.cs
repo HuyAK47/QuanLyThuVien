@@ -92,5 +92,24 @@ namespace QuanLyThuVien.GUI.UC
                 btnXoa.Enabled = true;
             }
         }
+
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+            lockControl();
+        }
+
+        private void btnLuu_Click(object sender, EventArgs e)
+        {
+            ENTITY.TheLoai t = new ENTITY.TheLoai();
+            t.ID_TheLoai = txtMaLoaiSach.Text.Trim();
+            t.TenTheLoai = txtTenTheLoai.Text.Trim();
+            DAL.TheLoai_Controler tl = new DAL.TheLoai_Controler();
+            if (kt==true)
+            {
+                tl.insertTheLoai(t);
+            }
+            lockControl();
+            showLsvTheLoai();
+        }
     }
 }

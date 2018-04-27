@@ -63,6 +63,13 @@ namespace QuanLyThuVien.GUI.UC
             lsvSach.Enabled = false;
         }
 
+        public string formatDate(string dt)
+        {
+            DateTime dateTime = DateTime.Parse(dt);
+            string date = dateTime.ToString("yyyy/MM/dd");
+            return date;
+        }
+
         public void showLsvNXB()
         {
 
@@ -77,7 +84,7 @@ namespace QuanLyThuVien.GUI.UC
                 item.SubItems.Add(dr["IDTacGia"].ToString());
                 item.SubItems.Add(dr["IDNhaXuatBan"].ToString());
                 item.SubItems.Add(dr["SoTrang"].ToString());
-                item.SubItems.Add(dr["NamXB"].ToString());
+                item.SubItems.Add(formatDate(dr["NamXB"].ToString()));
                 item.SubItems.Add(dr["SoLuong"].ToString());
                 item.SubItems.Add(dr["NgonNgu"].ToString());
                 item.SubItems.Add(dr["GiaNiemYet"].ToString());
@@ -123,6 +130,33 @@ namespace QuanLyThuVien.GUI.UC
                 btnSua.Enabled = true;
                 btnXoa.Enabled = true;
             }
+        }
+
+        private void btnLuu_Click(object sender, EventArgs e)
+        {
+            ENTITY.Sach s = new ENTITY.Sach();
+            s.ID_Sach = txtMaSach.Text.Trim();
+            s.TenSach = txtTenSach.Text.Trim();
+            s.ID_TheLoai = txtMaTheLoai.Text.Trim();
+            s.ID_TacGia = txtMaTacGia.Text.Trim();
+            s.ID_NhaXuatBan = txtMaNXB.Text.Trim();
+            s.SoTrang = txtSoTrang.Text.Trim();
+            s.NamXB = txtNamXB.Text.Trim();
+            s.SoLuong = txtSoLuong.Text.Trim();
+            s.NgonNgu = txtNgonNgu.Text.Trim();
+            s.GiaNiemYet = txtGiaNY.Text.Trim();
+            DAL.Sach_Controler sa = new DAL.Sach_Controler();
+            if (kt==true)
+            {
+                sa.insertSach(s);
+            }
+            lockControl();
+            showLsvNXB();
+        }
+
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+            lockControl();
         }
     }
 }

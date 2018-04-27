@@ -100,5 +100,26 @@ namespace QuanLyThuVien.GUI.UC
                 btnXoa.Enabled = true;
             }
         }
+
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+            lockControl();
+        }
+
+        private void btnLuu_Click(object sender, EventArgs e)
+        {
+            ENTITY.NhaXuatBan n = new ENTITY.NhaXuatBan();
+            n.ID_NhaXuatBan = txtMaNXB.Text.Trim();
+            n.TenNXB = txtTenNXB.Text.Trim();
+            n.DiaChi = txtDiaChi.Text.Trim();
+            n.SDT = txtSDT.Text.Trim();
+            DAL.NhaXuatBan_Controler nxb = new DAL.NhaXuatBan_Controler();
+            if (kt==true)
+            {
+                nxb.insertNhanXuatBan(n);
+            }
+            lockControl();
+            showLsvNXB();
+        }
     }
 }

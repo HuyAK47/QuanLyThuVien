@@ -60,6 +60,13 @@ namespace QuanLyThuVien.GUI.UC
             lsvNhanVien.Enabled = false;
         }
 
+        public string formatDate(string dt)
+        {
+            DateTime dateTime = DateTime.Parse(dt);
+            string date = dateTime.ToString("yyyy/MM/dd");
+            return date;
+        }
+
         public void showLsvNV()
         {
 
@@ -70,7 +77,7 @@ namespace QuanLyThuVien.GUI.UC
                 ListViewItem item = new ListViewItem();
                 item.Text = dr["IDNhanVien"].ToString();
                 item.SubItems.Add(dr["HoTen"].ToString());
-                item.SubItems.Add(dr["NgaySinh"].ToString());
+                item.SubItems.Add(formatDate(dr["NgaySinh"].ToString()));
                 item.SubItems.Add(dr["Luong"].ToString());
                 item.SubItems.Add(dr["SDT"].ToString());
                 item.SubItems.Add(dr["Email"].ToString());
@@ -116,6 +123,31 @@ namespace QuanLyThuVien.GUI.UC
                 btnSua.Enabled = true;
                 btnXoa.Enabled = true;
             }
+        }
+
+        private void btnLuu_Click(object sender, EventArgs e)
+        {
+            ENTITY.NhanVien n = new ENTITY.NhanVien();
+            n.ID_NhanVien = txtMaNV.Text.Trim();
+            n.HoTen = txtTenNV.Text.Trim();
+            n.NgaySinh = txtNgaySinh.Text.Trim();
+            n.Luong = txtLuong.Text.Trim();
+            n.SDT = txtSDT.Text.Trim();
+            n.Email = txtEmail.Text.Trim();
+            n.GioiTinh = txtGioiTinh.Text.Trim();
+            n.DiaChi = txtDiaChi.Text.Trim();
+            DAL.NhanVien_Controler nv = new DAL.NhanVien_Controler();
+            if (kt==true)
+            {
+                nv.insertNhanVien(n);
+            }
+            lockControl();
+            showLsvNV();
+        }
+
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+            lockControl();
         }
     }
 }

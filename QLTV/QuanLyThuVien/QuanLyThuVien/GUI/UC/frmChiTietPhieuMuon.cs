@@ -106,5 +106,27 @@ namespace QuanLyThuVien.GUI.UC
                 btnXoa.Enabled = true;
             }
         }
+
+        private void btnLuu_Click(object sender, EventArgs e)
+        {
+            ENTITY.ChiTietPhieuMuon c = new ENTITY.ChiTietPhieuMuon();
+            c.ID_ChiTietPhieuMuon = txtMaCTPM.Text.Trim();
+            c.ID_PhieuMuon = txtMaPM.Text.Trim();
+            c.ID_Sach = txtMaSach.Text.Trim();
+            c.SoLuong = txtSoLuong.Text.Trim();
+            c.TrangThai = txtTrangThai.Text.Trim();
+            DAL.ChiTietPhieuMuon_Controler ct = new DAL.ChiTietPhieuMuon_Controler();
+            if (kt==false)
+            {
+                ct.insertCTPhieuMuon(c);
+            }
+            showLsvCTPM();
+            lockControl();
+        }
+
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+            lockControl();
+        }
     }
 }

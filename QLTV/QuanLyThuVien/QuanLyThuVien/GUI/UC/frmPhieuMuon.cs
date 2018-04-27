@@ -58,6 +58,13 @@ namespace QuanLyThuVien.GUI.UC
             lsvPhieuMuon.Enabled = false;
         }
 
+        public string formatDate(string dt)
+        {
+            DateTime dateTime = DateTime.Parse(dt);
+            string date = dateTime.ToString("yyyy/MM/dd");
+            return date;
+        }
+
         public void showLsvPhieuMuon()
         {
 
@@ -69,9 +76,9 @@ namespace QuanLyThuVien.GUI.UC
                 item.Text = dr["IDPhieuMuon"].ToString();
                 item.SubItems.Add(dr["IDNhanVien"].ToString());
                 item.SubItems.Add(dr["IDSinhVien"].ToString());
-                item.SubItems.Add(dr["NgayMuon"].ToString());
-                item.SubItems.Add(dr["NgayTra"].ToString());
-                item.SubItems.Add(dr["HanTra"].ToString());
+                item.SubItems.Add(formatDate(dr["NgayMuon"].ToString()));
+                item.SubItems.Add(formatDate(dr["NgayTra"].ToString()));
+                item.SubItems.Add(formatDate(dr["HanTra"].ToString()));
                 item.SubItems.Add(dr["TienPhat"].ToString());
                 lsvPhieuMuon.Items.Add(item);
             }
@@ -114,6 +121,30 @@ namespace QuanLyThuVien.GUI.UC
                 btnSua.Enabled = true;
                 btnXoa.Enabled = true;
             }
+        }
+
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+            lockControl();
+        }
+
+        private void btnLuu_Click(object sender, EventArgs e)
+        {
+            ENTITY.PhieuMuon p = new ENTITY.PhieuMuon();
+            p.ID_PhieuMuon = txtMaPhieuMuon.Text.Trim();
+            p.ID_NhanVien = txtMaNhanVien.Text.Trim();
+            p.ID_SinhVien = txtMaSinhVien.Text.Trim();
+            p.NgayMuon = txtNgayMuon.Text.Trim();
+            p.NgayTra = txtNgayTra.Text.Trim();
+            p.HanTra = txtHanTra.Text.Trim();
+            p.TienPhat = txtTienPhat.Text.Trim();
+            DAL.PhieuMuon_Controler pm = new DAL.PhieuMuon_Controler();
+            if (kt==true)
+            {
+                pm.insertPhieuMuon(p);
+            }
+            lockControl();
+            showLsvPhieuMuon();
         }
     }
 }

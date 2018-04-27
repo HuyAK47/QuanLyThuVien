@@ -45,7 +45,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAL\ChiTietPhieuMuon_Controler.cs" />
+    <Compile Include="DAL\NhanVien_Controler.cs" />
+    <Compile Include="DAL\NhaXuatBan_Controler.cs" />
+    <Compile Include="DAL\PhieuMuon_Controler.cs" />
+    <Compile Include="DAL\Sach_Controler.cs" />
+    <Compile Include="DAL\SinhVien_Controler.cs" />
     <Compile Include="DAL\sqlConnect.cs" />
+    <Compile Include="DAL\TacGia_Controler.cs" />
+    <Compile Include="DAL\TheLoai_Controler.cs" />
+    <Compile Include="ENTITY\ChiTietPhieuMuon.cs" />
+    <Compile Include="ENTITY\NhanVien.cs" />
+    <Compile Include="ENTITY\NhaXuatBan.cs" />
+    <Compile Include="ENTITY\PhieuMuon.cs" />
+    <Compile Include="ENTITY\Sach.cs" />
+    <Compile Include="ENTITY\SinhVien.cs" />
+    <Compile Include="ENTITY\TacGia.cs" />
+    <Compile Include="ENTITY\TheLoai.cs" />
     <Compile Include="GUI\UC\frmChiTietPhieuMuon.cs">
       <SubType>Form</SubType>
     </Compile>

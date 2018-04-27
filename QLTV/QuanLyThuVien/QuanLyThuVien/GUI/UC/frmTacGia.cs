@@ -96,5 +96,25 @@ namespace QuanLyThuVien.GUI.UC
                 btnXoa.Enabled = true;
             }
         }
+
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+            lockControl();
+        }
+
+        private void btnLuu_Click(object sender, EventArgs e)
+        {
+            ENTITY.TacGia t = new ENTITY.TacGia();
+            t.ID_TacGia = txtMaTacGia.Text.Trim();
+            t.TenTacGia = txtTenTacGia.Text.Trim();
+            t.HocVi = txtHocVi.Text.Trim();
+            DAL.TacGia_Controler tg = new DAL.TacGia_Controler();
+            if (kt==true)
+            {
+                tg.insertTacGia(t);
+            }
+            lockControl();
+            showLsvTacGia();
+        }
     }
 }
