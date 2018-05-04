@@ -1,3 +1,8 @@
+create database qlThuVien
+go
+
+use qlThuVien
+go
 create table NhanVien(
 IDNhanVien nvarchar(10) primary key,
 HoTen nvarchar(30),
