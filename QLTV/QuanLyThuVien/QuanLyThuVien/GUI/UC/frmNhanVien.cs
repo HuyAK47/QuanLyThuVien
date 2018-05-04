@@ -81,7 +81,7 @@ namespace QuanLyThuVien.GUI.UC
 
         public void showLsvNV()
         {
-
+            lsvNhanVien.Items.Clear();
             DAL.sqlConnect conn = new DAL.sqlConnect();
             SqlDataReader dr = conn.getDataTable("NhanVien");
             while (dr.Read())
@@ -153,6 +153,10 @@ namespace QuanLyThuVien.GUI.UC
             if (kt==true)
             {
                 nv.insertNhanVien(n);
+            }
+            else
+            {
+                nv.editNhanVien(n);
             }
             lockControl();
             showLsvNV();

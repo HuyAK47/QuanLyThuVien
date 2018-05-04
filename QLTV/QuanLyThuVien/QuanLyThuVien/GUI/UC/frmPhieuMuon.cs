@@ -78,7 +78,7 @@ namespace QuanLyThuVien.GUI.UC
 
         public void showLsvPhieuMuon()
         {
-
+            lsvNhanVien.Items.Clear();
             DAL.sqlConnect conn = new DAL.sqlConnect();
             SqlDataReader dr = conn.getDataTable("PhieuMuon");
             while (dr.Read())
@@ -154,6 +154,10 @@ namespace QuanLyThuVien.GUI.UC
             if (kt==true)
             {
                 pm.insertPhieuMuon(p);
+            }
+            else
+            {
+                pm.editPhieuMuon(p);
             }
             lockControl();
             showLsvPhieuMuon();

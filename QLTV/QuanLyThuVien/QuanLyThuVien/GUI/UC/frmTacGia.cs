@@ -58,7 +58,7 @@ namespace QuanLyThuVien.GUI.UC
 
         public void showLsvTacGia()
         {
-
+            lsvNhanVien.Items.Clear();
             DAL.sqlConnect conn = new DAL.sqlConnect();
             SqlDataReader dr = conn.getDataTable("TacGia");
             while (dr.Read())
@@ -120,6 +120,10 @@ namespace QuanLyThuVien.GUI.UC
             if (kt==true)
             {
                 tg.insertTacGia(t);
+            }
+            else
+            {
+                tg.editTacGia(t);
             }
             lockControl();
             showLsvTacGia();

@@ -21,5 +21,17 @@ namespace QuanLyThuVien.DAL
             cmd.Parameters.AddWithValue("@SDT", nxb.SDT);
             cmd.ExecuteNonQuery();
         }
+
+        public void editNhanXuatBan(NhaXuatBan nxb)
+        {
+            openConnection();
+            string query = "update NhaXuatBan set TenNXB = @TenNXB, DiaChi =  @DiaChi, SDT = @SDT where IDNhaXuatBan = @IDNhaXuatBan";
+            SqlCommand cmd = new SqlCommand(query, Conn);
+            cmd.Parameters.AddWithValue("@IDNhaXuatBan", nxb.ID_NhaXuatBan);
+            cmd.Parameters.AddWithValue("@TenNXB", nxb.TenNXB);
+            cmd.Parameters.AddWithValue("@DiaChi", nxb.DiaChi);
+            cmd.Parameters.AddWithValue("@SDT", nxb.SDT);
+            cmd.ExecuteNonQuery();
+        }
     }
 }

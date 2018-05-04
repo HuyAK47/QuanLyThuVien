@@ -55,7 +55,7 @@ namespace QuanLyThuVien.GUI.UC
 
         public void showLsvTheLoai()
         {
-
+            lsvNhanVien.Items.Clear();
             DAL.sqlConnect conn = new DAL.sqlConnect();
             SqlDataReader dr = conn.getDataTable("TheLoai");
             while (dr.Read())
@@ -114,6 +114,10 @@ namespace QuanLyThuVien.GUI.UC
             if (kt==true)
             {
                 tl.insertTheLoai(t);
+            }
+            else
+            {
+                tl.editTheLoai(t);
             }
             lockControl();
             showLsvTheLoai();

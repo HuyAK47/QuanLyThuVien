@@ -24,5 +24,21 @@ namespace QuanLyThuVien.DAL
             cmd.Parameters.AddWithValue("@TienPhat", pm.TienPhat);
             cmd.ExecuteNonQuery();
         }
+
+        public void editPhieuMuon(PhieuMuon pm)
+        {
+            openConnection();
+            string query = "update PhieuMuon set IDNhanVien = @IDNhanVien, IDSinhVien =@IDSinhVien, NgayMuon = @NgayMuon, NgayTra =@NgayTra, HanTra = @HanTra, TienPhat = @TienPhat where IDPhieuMuon = @IDPhieuMuon";
+            SqlCommand cmd = new SqlCommand(query, Conn);
+            SqlCommand cmd = new SqlCommand(query, Conn);
+            cmd.Parameters.AddWithValue("@IDPhieuMuon", pm.ID_PhieuMuon);
+            cmd.Parameters.AddWithValue("@IDNhanVien", pm.ID_NhanVien);
+            cmd.Parameters.AddWithValue("@IDSinhVien", pm.ID_SinhVien);
+            cmd.Parameters.AddWithValue("@NgayMuon", pm.NgayMuon);
+            cmd.Parameters.AddWithValue("@NgayTra", pm.NgayTra);
+            cmd.Parameters.AddWithValue("@HanTra", pm.HanTra);
+            cmd.Parameters.AddWithValue("@TienPhat", pm.TienPhat);
+            cmd.ExecuteNonQuery();
+        }
     }
 }

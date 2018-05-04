@@ -80,7 +80,7 @@ namespace QuanLyThuVien.GUI.UC
 
         public void showLsvSV()
         {
-
+            lsvNhanVien.Items.Clear();
             DAL.sqlConnect conn = new DAL.sqlConnect();
             SqlDataReader dr = conn.getDataTable("SinhVien");
             while (dr.Read())
@@ -157,6 +157,10 @@ namespace QuanLyThuVien.GUI.UC
             if (kt==true)
             {
                 sv.insertSinhVien(s);
+            }
+            else
+            {
+                sv.editSinhVien(s);
             }
             lockControl();
             showLsvSV();

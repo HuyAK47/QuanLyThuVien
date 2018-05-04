@@ -19,5 +19,15 @@ namespace QuanLyThuVien.DAL
             cmd.Parameters.AddWithValue("@TenTheLoai", tl.TenTheLoai);
             cmd.ExecuteNonQuery();
         }
+
+        public void editTheLoai(TheLoai tl)
+        {
+            openConnection();
+            string query = "update TheLoai set TenTheLoai = @TenTheLoai where IDTheLoai = @IDTheLoai";
+            SqlCommand cmd = new SqlCommand(query, Conn);
+            cmd.Parameters.AddWithValue("@IDTheLoai", tl.ID_TheLoai);
+            cmd.Parameters.AddWithValue("@TenTheLoai", tl.TenTheLoai);
+            cmd.ExecuteNonQuery();
+        }
     }
 }

@@ -61,7 +61,7 @@ namespace QuanLyThuVien.GUI.UC
 
         public void showLsvNXB()
         {
-
+            lsvNXB.Items.Clear();
             DAL.sqlConnect conn = new DAL.sqlConnect();
             SqlDataReader dr = conn.getDataTable("NhaXuatBan");
             while (dr.Read())
@@ -126,6 +126,10 @@ namespace QuanLyThuVien.GUI.UC
             if (kt==true)
             {
                 nxb.insertNhanXuatBan(n);
+            }
+            else
+            {
+                nxb.editNhanXuatBan(n);
             }
             lockControl();
             showLsvNXB();

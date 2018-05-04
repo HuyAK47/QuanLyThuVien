@@ -64,7 +64,7 @@ namespace QuanLyThuVien.GUI.UC
 
         public void showLsvCTPM()
         {
-          
+            lsvChiTietPM.Items.Clear();
             DAL.sqlConnect conn = new DAL.sqlConnect();
             SqlDataReader dr = conn.getDataTable("ChiTietPhieuMuon");
             while (dr.Read())
@@ -99,7 +99,7 @@ namespace QuanLyThuVien.GUI.UC
             btnThem.Enabled = false;
             btnXoa.Enabled = false;
             txtSoLuong.Focus();
-            
+
         }
 
         private void lsvChiTietPM_SelectedIndexChanged(object sender, EventArgs e)
@@ -126,9 +126,13 @@ namespace QuanLyThuVien.GUI.UC
             c.SoLuong = txtSoLuong.Text.Trim();
             c.TrangThai = txtTrangThai.Text.Trim();
             DAL.ChiTietPhieuMuon_Controler ct = new DAL.ChiTietPhieuMuon_Controler();
-            if (kt==false)
+            if (kt == false)
             {
                 ct.insertCTPhieuMuon(c);
+            }
+            else
+            {
+                ct.editCTPhieuMuon(c);
             }
             showLsvCTPM();
             lockControl();

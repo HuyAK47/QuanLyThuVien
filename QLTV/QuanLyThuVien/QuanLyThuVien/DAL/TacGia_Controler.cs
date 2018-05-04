@@ -20,5 +20,16 @@ namespace QuanLyThuVien.DAL
             cmd.Parameters.AddWithValue("@HocVi", tg.HocVi);
             cmd.ExecuteNonQuery();
         }
+
+        public void editTacGia(TacGia tg)
+        {
+            openConnection();
+            string query = "update TacGia set TenTG = @TenTG, HocVi = @HocVi where IDTacGia = @IDTacGia";
+            SqlCommand cmd = new SqlCommand(query, Conn);
+            cmd.Parameters.AddWithValue("@IDTacGia", tg.ID_TacGia);
+            cmd.Parameters.AddWithValue("@TenTG", tg.TenTacGia);
+            cmd.Parameters.AddWithValue("@HocVi", tg.HocVi);
+            cmd.ExecuteNonQuery();
+        }
     }
 }
