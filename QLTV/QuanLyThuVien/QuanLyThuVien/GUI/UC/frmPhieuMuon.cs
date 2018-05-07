@@ -158,5 +158,50 @@ namespace QuanLyThuVien.GUI.UC
             lockControl();
             showLsvPhieuMuon();
         }
+
+        private void addList(SqlDataReader dr)
+        {
+            ListViewItem item = new ListViewItem();
+            item.Text = dr["IDPhieuMuon"].ToString();
+            item.SubItems.Add(dr["IDNhanVien"].ToString());
+            item.SubItems.Add(dr["IDSinhVien"].ToString());
+            item.SubItems.Add(dr["NgayMuon"].ToString());
+            item.SubItems.Add(dr["NgayTra"].ToString());
+            item.SubItems.Add(dr["HanTra"].ToString());
+            item.SubItems.Add(dr["TienPhat"].ToString());
+            lsvPhieuMuon.Items.Add(item);
+        }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            lsvPhieuMuon.Items.Clear();
+            SqlConnection conn = new SqlConnection("Data Source=DESKTOP-P8I38NF\\SQLEXPRESS;Initial Catalog=QLTV;Integrated Security=True");
+            conn.Open();
+            SqlDataReader dr = null;
+            SqlCommand cmd = null;
+            string key = cmbTimKiem.Text.Trim();
+            string value = txtTimKiem.Text.Trim();
+            string query;
+            if (key.Equals("Mã Phiếu Mượn"))
+            {
+                query = "select * from PhieuMuon where IDPhieuMuon like '" + value + "%'";
+                cmd = new SqlCommand(query, conn);
+                dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    addList(dr);
+                }
+            }
+            else
+            {
+                query = "select * from PhieuMuon where IDPhieuMuon like '" + value + "%'";
+                cmd = new SqlCommand(query, conn);
+                dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    addList(dr);
+                }
+            }
+        }
     }
 }

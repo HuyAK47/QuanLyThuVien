@@ -270,7 +270,7 @@
             // txtTimKiem
             // 
             this.txtTimKiem.Location = new System.Drawing.Point(242, 9);
-            this.txtTimKiem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTimKiem.Margin = new System.Windows.Forms.Padding(2);
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.Size = new System.Drawing.Size(110, 20);
             this.txtTimKiem.TabIndex = 1;
@@ -295,6 +295,7 @@
             this.btnTimKiem.Text = "Tìm kiếm";
             this.btnTimKiem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnTimKiem.UseVisualStyleBackColor = true;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // label4
             // 
@@ -309,6 +310,10 @@
             // cmbTimKiem
             // 
             this.cmbTimKiem.FormattingEnabled = true;
+            this.cmbTimKiem.Items.AddRange(new object[] {
+            "t01",
+            "t02",
+            "t03"});
             this.cmbTimKiem.Location = new System.Drawing.Point(117, 7);
             this.cmbTimKiem.Name = "cmbTimKiem";
             this.cmbTimKiem.Size = new System.Drawing.Size(121, 21);
@@ -321,7 +326,7 @@
             this.ClientSize = new System.Drawing.Size(876, 509);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmTacGia";
             this.Text = "frmTacGia";
             this.Load += new System.EventHandler(this.frmTacGia_Load);

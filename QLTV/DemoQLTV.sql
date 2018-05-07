@@ -10,6 +10,10 @@ DiaChi nvarchar(30),
 )
 go
 
+
+create database QLTV
+use QLTV
+
 create table NhaXuatBan(
 IDNhaXuatBan nvarchar(10) primary key,
 TenNXB nvarchar(30),

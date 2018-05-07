@@ -173,5 +173,53 @@ namespace QuanLyThuVien.GUI.UC
         {
             lockControl();
         }
+
+        private void addList(SqlDataReader dr)
+        {
+            ListViewItem item = new ListViewItem();
+            item.Text = dr["IDSach"].ToString();
+            item.SubItems.Add(dr["TenSach"].ToString());
+            item.SubItems.Add(dr["IDTheLoai"].ToString());
+            item.SubItems.Add(dr["IDTacGia"].ToString());
+            item.SubItems.Add(dr["IDNhaXuatBan"].ToString());
+            item.SubItems.Add(dr["SoTrang"].ToString());
+            item.SubItems.Add(dr["NamXB"].ToString());
+            item.SubItems.Add(dr["SoLuong"].ToString());
+            item.SubItems.Add(dr["NgonNgu"].ToString());
+            item.SubItems.Add(dr["GiaNiemYet"].ToString());
+            lsvSach.Items.Add(item);
+        }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            lsvSach.Items.Clear();
+            SqlConnection conn = new SqlConnection("Data Source=DESKTOP-P8I38NF\\SQLEXPRESS;Initial Catalog=QLTV;Integrated Security=True");
+            conn.Open();
+            SqlDataReader dr = null;
+            SqlCommand cmd = null;
+            string key = cmbTimKiem.Text.Trim();
+            string value = txtTimKiem.Text.Trim();
+            string query;
+            if (key.Equals("Mã Sách"))
+            {
+                query = "select * from Sach where IDSach like '" + value + "%'";
+                cmd = new SqlCommand(query, conn);
+                dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    addList(dr);
+                }
+            }
+            else
+            {
+                query = "select * from Sach where IDSach like '" + value + "%'";
+                cmd = new SqlCommand(query, conn);
+                dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    addList(dr);
+                }
+            }
+        }
     }
 }
