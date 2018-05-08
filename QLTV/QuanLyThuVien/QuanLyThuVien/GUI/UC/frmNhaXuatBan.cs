@@ -134,5 +134,46 @@ namespace QuanLyThuVien.GUI.UC
             lockControl();
             showLsvNXB();
         }
+        private void addList(SqlDataReader dr)
+        {
+            ListViewItem item = new ListViewItem();
+            item.Text = dr["IDNhaXuatBan"].ToString();
+            item.SubItems.Add(dr["TenNXB"].ToString());
+            item.SubItems.Add(dr["DiaChi"].ToString());
+            item.SubItems.Add(dr["SDT"].ToString());
+            lsvNXB.Items.Add(item);
+        }
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            lsvNXB.Items.Clear();
+            SqlConnection conn = new SqlConnection("Data Source=DESKTOP-P8I38NF\\SQLEXPRESS;Initial Catalog=QLTV;Integrated Security=True");
+            conn.Open();
+            SqlDataReader dr = null;
+            SqlCommand cmd = null;
+            string key = cmbTimKiem.Text.Trim();
+            string value = txtTimKiem.Text.Trim();
+            string query;
+            if (key.Equals("Mã nhà xuất bản"))
+            {
+                query = "select * from NhaXuatBan where IDNhaXuatBan like '" + value + "%'";
+                cmd = new SqlCommand(query, conn);
+                dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    addList(dr);
+                }
+            }
+            else
+            {
+                query = "select * from NhaXuatBan where IDNhaXuatBan like '" + value + "%'";
+                cmd = new SqlCommand(query, conn);
+                dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    addList(dr);
+                }
+            }
+        }
     }
-}
+    }
+

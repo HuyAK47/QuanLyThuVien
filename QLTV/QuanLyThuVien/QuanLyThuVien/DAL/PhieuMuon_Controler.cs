@@ -30,7 +30,7 @@ namespace QuanLyThuVien.DAL
             openConnection();
             string query = "update PhieuMuon set IDNhanVien = @IDNhanVien, IDSinhVien =@IDSinhVien, NgayMuon = @NgayMuon, NgayTra =@NgayTra, HanTra = @HanTra, TienPhat = @TienPhat where IDPhieuMuon = @IDPhieuMuon";
             SqlCommand cmd = new SqlCommand(query, Conn);
-            SqlCommand cmd = new SqlCommand(query, Conn);
+          //  SqlCommand cmd = new SqlCommand(query, Conn);
             cmd.Parameters.AddWithValue("@IDPhieuMuon", pm.ID_PhieuMuon);
             cmd.Parameters.AddWithValue("@IDNhanVien", pm.ID_NhanVien);
             cmd.Parameters.AddWithValue("@IDSinhVien", pm.ID_SinhVien);

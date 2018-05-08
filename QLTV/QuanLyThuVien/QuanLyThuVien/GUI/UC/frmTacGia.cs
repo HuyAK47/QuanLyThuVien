@@ -58,7 +58,7 @@ namespace QuanLyThuVien.GUI.UC
 
         public void showLsvTacGia()
         {
-            lsvNhanVien.Items.Clear();
+            lsvTacGia.Items.Clear();
             DAL.sqlConnect conn = new DAL.sqlConnect();
             SqlDataReader dr = conn.getDataTable("TacGia");
             while (dr.Read())
@@ -127,6 +127,46 @@ namespace QuanLyThuVien.GUI.UC
             }
             lockControl();
             showLsvTacGia();
+        }
+        private void addList(SqlDataReader dr)
+        {
+            ListViewItem item = new ListViewItem();
+            item.Text = dr["IDTacGia"].ToString();
+            item.SubItems.Add(dr["TenTG"].ToString());
+            item.SubItems.Add(dr["HocVi"].ToString());
+
+            lsvTacGia.Items.Add(item);
+        }
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            lsvTacGia.Items.Clear();
+            SqlConnection conn = new SqlConnection("Data Source=DESKTOP-P8I38NF\\SQLEXPRESS;Initial Catalog=QLTV;Integrated Security=True");
+            conn.Open();
+            SqlDataReader dr = null;
+            SqlCommand cmd = null;
+            string key = cmbTimKiem.Text.Trim();
+            string value = txtTimKiem.Text.Trim();
+            string query;
+            if (key.Equals("Mã Tác Giả"))
+            {
+                query = "select * from TacGia where IDTacGia like '" + value + "%'";
+                cmd = new SqlCommand(query, conn);
+                dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    addList(dr);
+                }
+            }
+            else
+            {
+                query = "select * from TacGia where IDTacGia like '" + value + "%'";
+                cmd = new SqlCommand(query, conn);
+                dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    addList(dr);
+                }
+            }
         }
     }
 }

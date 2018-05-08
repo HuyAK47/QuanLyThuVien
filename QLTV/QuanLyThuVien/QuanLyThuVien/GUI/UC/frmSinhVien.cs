@@ -80,7 +80,7 @@ namespace QuanLyThuVien.GUI.UC
 
         public void showLsvSV()
         {
-            lsvNhanVien.Items.Clear();
+            lsvSinhVien.Items.Clear();
             DAL.sqlConnect conn = new DAL.sqlConnect();
             SqlDataReader dr = conn.getDataTable("SinhVien");
             while (dr.Read())
@@ -164,6 +164,51 @@ namespace QuanLyThuVien.GUI.UC
             }
             lockControl();
             showLsvSV();
+        }
+        private void addList(SqlDataReader dr)
+        {
+            ListViewItem item = new ListViewItem();
+            item.Text = dr["IDSinhVien"].ToString();
+            item.SubItems.Add(dr["TenSV"].ToString());
+            item.SubItems.Add(dr["GioiTinh"].ToString());
+            item.SubItems.Add(dr["NgaySinh"].ToString());
+            item.SubItems.Add(dr["DiaChi"].ToString());
+            item.SubItems.Add(dr["SDT"].ToString());
+            item.SubItems.Add(dr["Email"].ToString());
+            item.SubItems.Add(dr["HanThe"].ToString());
+
+            lsvSinhVien.Items.Add(item);
+        }
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            lsvSinhVien.Items.Clear();
+            SqlConnection conn = new SqlConnection("Data Source=DESKTOP-P8I38NF\\SQLEXPRESS;Initial Catalog=QLTV;Integrated Security=True");
+            conn.Open();
+            SqlDataReader dr = null;
+            SqlCommand cmd = null;
+            string key = cmbTimKiem.Text.Trim();
+            string value = txtTimKiem.Text.Trim();
+            string query;
+            if (key.Equals("Mã Sinh Viên"))
+            {
+                query = "select * from SinhVien where IDSinhVien like '" + value + "%'";
+                cmd = new SqlCommand(query, conn);
+                dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    addList(dr);
+                }
+            }
+            else
+            {
+                query = "select * from SinhVien where IDSinhVien like '" + value + "%'";
+                cmd = new SqlCommand(query, conn);
+                dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    addList(dr);
+                }
+            }
         }
     }
 }
