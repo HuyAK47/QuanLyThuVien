@@ -10,7 +10,7 @@ namespace QuanLyThuVien.DAL
 {
     class sqlConnect
     {
-        private string strConn = @"Data Source=DESKTOP-P8I38NF\SQLEXPRESS;Initial Catalog=QLTV;Integrated Security=True";
+        private string strConn = @"Data Source=HIEP\SQLEXPRESS;Initial Catalog=qlThuVien;Integrated Security=True";
         private SqlCommand cmd = null;
         private SqlConnection conn = null;
 
@@ -102,6 +102,19 @@ namespace QuanLyThuVien.DAL
             }
             return str;
 
+        }
+
+        public DataTable TK(string cl)
+        {
+            openConnection();
+            string query = cl;
+            SqlCommand cmd = new SqlCommand(query, conn);
+            SqlDataAdapter dh = new SqlDataAdapter(cmd);
+            DataTable db = new DataTable();
+            dh.Fill(db);
+            dh.Dispose();
+            cmd.Dispose();
+            return db;
         }
     }
 }

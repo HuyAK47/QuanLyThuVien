@@ -82,4 +82,69 @@ TrangThai bit
 )
 go
 
+create proc TK_Sach_TenTacGia( @TenTG nvarchar(30))
+as
+begin 
+		select * from Sach , (select IDTacGia from TacGia where TenTG = @TenTG) as A
+		where Sach.IDTacGia = A.IDTacGia 
+end
+-------------
 
+create proc TK_Sach_NhaXuatBan( @TenNXB nvarchar(30))
+as
+begin 
+		select * from Sach , (select IDNhaXuatBan from NhaXuatBan where TenNXB = @TenNXB) as A
+		where Sach.IDNhaXuatBan = A.IDNhaXuatBan
+end
+-----------
+create proc TK_Sach_TheLoai( @TenTheLoai nvarchar(30))
+as
+begin 
+		select * from Sach , (select IDTheLoai from TheLoai where TenTheLoai = @TenTheLoai) as A
+		where Sach.IDTheLoai = A.IDTheLoai
+end
+-----------
+
+create proc TK_NhaXuatBan_SlSach( @TenNXB nvarchar(30))
+as
+begin 
+		select B.IDNhaXuatBan, B.TenNXB , count (A.IDSach) as SoDauSach
+		from  (select IDSach, IDNhaXuatBan from Sach) as A, (select IDNhaXuatBan, TenNXB from NhaXuatBan where TenNXB = @TenNXB)  as B
+		where A.IDNhaXuatBan = B.IDNhaXuatBan
+		group by B.IDNhaXuatBan, B.TenNXB
+end
+----------
+create proc TK_TacGia_SlSach( @TenTG nvarchar(30))
+as
+begin 
+		select B.IDTacGia, B.TenTG , count (A.IDSach) as SoDauSach
+		from  (select IDSach, IDTacGia from Sach) as A, (select IDTacGia, TenTG from TacGia where TenTG = @TenTG)  as B
+		where A.IDTacGia = B.IDTacGia
+		group by B.IDTacGia, B.TenTG
+end
+----------
+
+create proc TK_TheLoai_SlSach( @TenTheLoai nvarchar(30))
+as
+begin 
+		select B.IDTheLoai, B.TenTheLoai , count (A.IDSach) as SoDauSach
+		from  (select IDSach, IDTheLoai from Sach) as A, (select IDTheLoai, TenTheLoai from TheLoai where TenTheLoai = @TenTheLoai)  as B
+		where A.IDTheLoai = B.IDTheLoai
+		group by B.IDTheLoai, B.TenTheLoai
+end
+
+-------
+create proc [dbo].[Tk_Sv_NgayMuon] ( @NgayMuon date )
+ as
+ begin
+		select SinhVien.*,  PhieuMuon.NgayTra from SinhVien,PhieuMuon
+		where PhieuMuon.NgayMuon  = @NgayMuon
+end
+
+------------
+create proc [dbo].[Tk_Sv_NgayTra] ( @NgayTra date )
+ as
+ begin
+		select SinhVien.*,  PhieuMuon.NgayTra from SinhVien,PhieuMuon
+		where PhieuMuon.NgayTra  = @NgayTra
+end 

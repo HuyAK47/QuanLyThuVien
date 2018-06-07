@@ -66,9 +66,18 @@ namespace QuanLyThuVien.GUI
             frmChiTietPhieu.ShowDialog();
         }
 
+        private void btnThongKe_Click(object sender, EventArgs e)
+        {
+            UC.frmThongKe frmThongKe = new UC.frmThongKe();
+            frmThongKe.ShowDialog();
+        }
+
+
         private void Menu_Load(object sender, EventArgs e)
         {
             this.CenterToScreen();
         }
+
+        
     }
 }
