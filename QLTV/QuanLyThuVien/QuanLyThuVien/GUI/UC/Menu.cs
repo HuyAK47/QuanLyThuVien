@@ -72,12 +72,26 @@ namespace QuanLyThuVien.GUI
             frmThongKe.ShowDialog();
         }
 
+        private void btnTroGiup_Click(object sender, EventArgs e)
+        {
+            UC.frmTroGiup frmTroGiup = new UC.frmTroGiup();
+            frmTroGiup.ShowDialog();
+        }
 
         private void Menu_Load(object sender, EventArgs e)
         {
             this.CenterToScreen();
+            this.KeyPreview = true ;
         }
 
-        
+        private void Menu_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.F1)
+            {
+                btnTroGiup.PerformClick();
+            }
+        }
+
+
     }
 }

@@ -101,6 +101,7 @@
             this.Controls.Add(this.label1);
             this.Name = "frmTroGiup";
             this.Text = "frmTroGiup";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmTroGiup_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

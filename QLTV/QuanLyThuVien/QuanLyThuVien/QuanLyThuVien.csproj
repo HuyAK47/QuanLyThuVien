@@ -116,6 +116,12 @@
     <Compile Include="GUI\UC\frmThongKe.Designer.cs">
       <DependentUpon>frmThongKe.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\UC\frmTroGiup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\UC\frmTroGiup.Designer.cs">
+      <DependentUpon>frmTroGiup.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\UC\Menu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -150,6 +156,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\UC\frmThongKe.resx">
       <DependentUpon>frmThongKe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UC\frmTroGiup.resx">
+      <DependentUpon>frmTroGiup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\UC\Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
@@ -218,6 +227,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\if_Settings_131786.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\help.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

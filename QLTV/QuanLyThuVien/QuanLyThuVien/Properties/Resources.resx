@@ -124,8 +124,8 @@
   <data name="books21" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\books21.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="if_basket_1814090" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\if_basket_1814090.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="if_Settings_131786" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\if_Settings_131786.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="books2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\books2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -148,16 +148,19 @@
   <data name="1428438959_Save" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1428438959_Save.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="if_save_all_1847" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\if_save_all_1847.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="if_cancel_32387" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\if_cancel_32387.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="if_Edit_page_131907" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\if_Edit_page_131907.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="if_save_all_1847" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\if_save_all_1847.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="if_basket_1814090" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\if_basket_1814090.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="if_Settings_131786" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\if_Settings_131786.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="help" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\help.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

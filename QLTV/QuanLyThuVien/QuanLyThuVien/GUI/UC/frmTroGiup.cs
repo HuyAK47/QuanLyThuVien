@@ -21,5 +21,13 @@ namespace QuanLyThuVien.GUI.UC
         {
             Close();
         }
+
+        private void frmTroGiup_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Escape)
+            {
+                this.Close();
+            }
+        }
     }
 }
