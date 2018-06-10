@@ -69,12 +69,12 @@ namespace QuanLyThuVien.GUI.UC
             txtTienPhat.ResetText();
         }
 
-        public string formatDate(string dt)
+        /*public string formatDate(string dt)
         {
             DateTime dateTime = DateTime.Parse(dt);
             string date = dateTime.ToString("yyyy/MM/dd");
             return date;
-        }
+        }*/
 
         public void showLsvPhieuMuon()
         {
@@ -87,9 +87,9 @@ namespace QuanLyThuVien.GUI.UC
                 item.Text = dr["IDPhieuMuon"].ToString();
                 item.SubItems.Add(dr["IDNhanVien"].ToString());
                 item.SubItems.Add(dr["IDSinhVien"].ToString());
-                item.SubItems.Add(formatDate(dr["NgayMuon"].ToString()));
-                item.SubItems.Add(formatDate(dr["NgayTra"].ToString()));
-                item.SubItems.Add(formatDate(dr["HanTra"].ToString()));
+                item.SubItems.Add((dr["NgayMuon"].ToString()));
+                item.SubItems.Add((dr["NgayTra"].ToString()));
+               item.SubItems.Add((dr["HanTra"].ToString()));
                 item.SubItems.Add(dr["TienPhat"].ToString());
                 lsvPhieuMuon.Items.Add(item);
             }
@@ -184,9 +184,10 @@ namespace QuanLyThuVien.GUI.UC
             string key = cmbTimKiem.Text.Trim();
             string value = txtTimKiem.Text.Trim();
             string query;
-            if (key.Equals("Mã Phiếu Mượn"))
+            if (key.Equals("Mã phiếu mượn"))
             {
                 query = "select * from PhieuMuon where IDPhieuMuon like '" + value + "%'";
+                //query = "select IDPhieuMuon,p.IDNhanVien,p.IDSinhVien from PhieuMuon p,NhanVien n, SinhVien s where p.IDNhanVien=n.IDNhanVien and p.IDSinhVien=n.IDSinhVien and IDPhieuMuon like '" + value + "%'";
                 cmd = new SqlCommand(query, conn);
                 dr = cmd.ExecuteReader();
                 while (dr.Read())
@@ -194,9 +195,19 @@ namespace QuanLyThuVien.GUI.UC
                     addList(dr);
                 }
             }
-            else
+            if (key.Equals("Mã nhân viên"))
             {
-                query = "select * from PhieuMuon where IDPhieuMuon like '" + value + "%'";
+                query = "select * from PhieuMuon where IDNhanVien like '" + value + "%'";
+                cmd = new SqlCommand(query, conn);
+                dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    addList(dr);
+                }
+            }
+            if (key.Equals("Mã sinh viên"))
+            {
+                query = "select * from PhieuMuon where IDSinhVien like '" + value + "%'";
                 cmd = new SqlCommand(query, conn);
                 dr = cmd.ExecuteReader();
                 while (dr.Read())

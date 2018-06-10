@@ -462,8 +462,8 @@
             // 
             this.cmbTimKiem.FormattingEnabled = true;
             this.cmbTimKiem.Items.AddRange(new object[] {
-            "SV01",
-            "SV02"});
+            "Mã Sinh Viên",
+            "Họ Tên SV"});
             this.cmbTimKiem.Location = new System.Drawing.Point(117, 7);
             this.cmbTimKiem.Name = "cmbTimKiem";
             this.cmbTimKiem.Size = new System.Drawing.Size(121, 21);

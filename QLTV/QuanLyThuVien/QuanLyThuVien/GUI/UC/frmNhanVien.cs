@@ -189,7 +189,7 @@ namespace QuanLyThuVien.GUI.UC
             string key = cmbTimKiem.Text.Trim();
             string value = txtTimKiem.Text.Trim();
             string query;
-            if (key.Equals("Mã nhân viên"))
+            if (key.Equals("Mã Nhân Viên"))
             {
                 query = "select * from NhanVien where IDNhanVien like '" + value + "%'";
                 cmd = new SqlCommand(query, conn);
@@ -199,9 +199,9 @@ namespace QuanLyThuVien.GUI.UC
                     addList(dr);
                 }
             }
-            else
+            if (key.Equals("Tên Nhân Viên"))
             {
-                query = "select * from NhanVien where IDNhanVien like '" + value + "%'";
+                query = "select * from NhanVien where HoTen like '" + value + "%'";
                 cmd = new SqlCommand(query, conn);
                 dr = cmd.ExecuteReader();
                 while (dr.Read())

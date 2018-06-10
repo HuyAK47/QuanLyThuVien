@@ -153,7 +153,7 @@ namespace QuanLyThuVien.GUI.UC
             string key = cmbTimKiem.Text.Trim();
             string value = txtTimKiem.Text.Trim();
             string query;
-            if (key.Equals("Mã nhà xuất bản"))
+            if (key.Equals("Mã NXB"))
             {
                 query = "select * from NhaXuatBan where IDNhaXuatBan like '" + value + "%'";
                 cmd = new SqlCommand(query, conn);
@@ -163,9 +163,9 @@ namespace QuanLyThuVien.GUI.UC
                     addList(dr);
                 }
             }
-            else
+            if (key.Equals("Tên NXB"))
             {
-                query = "select * from NhaXuatBan where IDNhaXuatBan like '" + value + "%'";
+                query = "select * from NhaXuatBan where TenNXB like '" + value + "%'";
                 cmd = new SqlCommand(query, conn);
                 dr = cmd.ExecuteReader();
                 while (dr.Read())

@@ -153,7 +153,7 @@ namespace QuanLyThuVien.GUI.UC
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            lsvChiTietPM.Items.Clear();
+           // lsvChiTietPM.Items.Clear();
             SqlConnection conn = new SqlConnection("Data Source=DESKTOP-P8I38NF\\SQLEXPRESS;Initial Catalog=QLTV;Integrated Security=True");
             conn.Open();
             SqlDataReader dr = null;
@@ -161,9 +161,9 @@ namespace QuanLyThuVien.GUI.UC
             string key = cmbTimKiem.Text.Trim();
             string value = txtTimKiem.Text.Trim();
             string query;
-            if (key.Equals("Mã chi tiết phiếu mượn"))
+            if (key.Equals("Mã Chi Tiết Phiếu Mượn"))
             {
-                query = "select * from ChiTietPhieuMuon where ID_ChiTietPhieuMuon like '" + value + "%'";
+                query = "select IDctPhieuMuon,c.IDPhieuMuon,c.IDSach,c.SoLuong from ChiTietPhieuMuon c, PhieuMuon P,Sach s where c.ID_PhieuMuon=P.ID_PhieuMuon and c.ID_Sach=s.ID_Sach and c.IDctPhieuMuon= like '" + value + "%'";
                 cmd = new SqlCommand(query, conn);
                 dr = cmd.ExecuteReader();
                 while (dr.Read())
@@ -171,9 +171,9 @@ namespace QuanLyThuVien.GUI.UC
                     addList(dr);
                 }
             }
-            else
+            if (key.Equals("Mã Phiếu Mượn"))
             {
-                query = "select * from ChiTietPhieuMuon where ID_ChiTietPhieuMuon like '" + value + "%'";
+                query = "select IDctPhieuMuon,c.IDPhieuMuon,c.IDSach,c.SoLuong from ChiTietPhieuMuon c, PhieuMuon P,Sach s where c.ID_PhieuMuon=P.ID_PhieuMuon and c.ID_Sach=s.ID_Sach and c.ID_PhieuMuon= like '" + value + "%'";
                 cmd = new SqlCommand(query, conn);
                 dr = cmd.ExecuteReader();
                 while (dr.Read())

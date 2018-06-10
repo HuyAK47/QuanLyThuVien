@@ -165,6 +165,22 @@ namespace QuanLyThuVien.GUI.UC
             lockControl();
             showLsvSV();
         }
+      
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            DialogResult check = MessageBox.Show("Bạn có muốn xóa không", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (check == DialogResult.Yes)
+            {
+                ENTITY.SinhVien sv = new ENTITY.SinhVien();
+                sv.ID_SinhVien = txtMaSV.Text.Trim();
+                DAL.SinhVien_Controler s = new DAL.SinhVien_Controler();
+                s.deleteSinhVien(sv);
+            }
+            showLsvSV();
+            lockControl();
+        }
+
         private void addList(SqlDataReader dr)
         {
             ListViewItem item = new ListViewItem();
@@ -191,7 +207,7 @@ namespace QuanLyThuVien.GUI.UC
             string query;
             if (key.Equals("Mã Sinh Viên"))
             {
-                query = "select * from SinhVien where IDSinhVien like '" + value + "%'";
+                query = "select * from SinhVien where IDSinhVien='"+txtTimKiem.Text.Trim()+"' ";
                 cmd = new SqlCommand(query, conn);
                 dr = cmd.ExecuteReader();
                 while (dr.Read())
@@ -199,9 +215,10 @@ namespace QuanLyThuVien.GUI.UC
                     addList(dr);
                 }
             }
-            else
+         
+            if (key.Equals("Họ Tên SV"))
             {
-                query = "select * from SinhVien where IDSinhVien like '" + value + "%'";
+                query = "select * from SinhVien where TenSV= '" + txtTimKiem.Text.Trim() + "'";
                 cmd = new SqlCommand(query, conn);
                 dr = cmd.ExecuteReader();
                 while (dr.Read())
@@ -209,20 +226,9 @@ namespace QuanLyThuVien.GUI.UC
                     addList(dr);
                 }
             }
-        }
+            
+          
 
-        private void btnXoa_Click(object sender, EventArgs e)
-        {
-            DialogResult check = MessageBox.Show("Bạn có muốn xóa không", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (check == DialogResult.Yes)
-            {
-                ENTITY.SinhVien sv = new ENTITY.SinhVien();
-                sv.ID_SinhVien = txtMaSV.Text.Trim();
-                DAL.SinhVien_Controler s = new DAL.SinhVien_Controler();
-                s.deleteSinhVien(sv);
-            }
-            showLsvSV();
-            lockControl();
         }
-    }
+        }
 }

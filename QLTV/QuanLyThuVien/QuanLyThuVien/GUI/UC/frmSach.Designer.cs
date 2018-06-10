@@ -519,6 +519,9 @@
             // cmbTimKiem
             // 
             this.cmbTimKiem.FormattingEnabled = true;
+            this.cmbTimKiem.Items.AddRange(new object[] {
+            "Mã Sách",
+            "Tên Sách"});
             this.cmbTimKiem.Location = new System.Drawing.Point(117, 7);
             this.cmbTimKiem.Name = "cmbTimKiem";
             this.cmbTimKiem.Size = new System.Drawing.Size(121, 21);

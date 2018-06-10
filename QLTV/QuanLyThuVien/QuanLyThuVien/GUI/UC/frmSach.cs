@@ -77,12 +77,12 @@ namespace QuanLyThuVien.GUI.UC
             txtGiaNY.ResetText();
         }
 
-        public string formatDate(string dt)
+       /* public string formatDate(string dt)
         {
             DateTime dateTime = DateTime.Parse(dt);
             string date = dateTime.ToString("yyyy/MM/dd");
             return date;
-        }
+        }*/
 
         public void showLsvNXB()
         {
@@ -98,7 +98,7 @@ namespace QuanLyThuVien.GUI.UC
                 item.SubItems.Add(dr["IDTacGia"].ToString());
                 item.SubItems.Add(dr["IDNhaXuatBan"].ToString());
                 item.SubItems.Add(dr["SoTrang"].ToString());
-                item.SubItems.Add(formatDate(dr["NamXB"].ToString()));
+               // item.SubItems.Add(formatDate(dr["NamXB"].ToString()));
                 item.SubItems.Add(dr["SoLuong"].ToString());
                 item.SubItems.Add(dr["NgonNgu"].ToString());
                 item.SubItems.Add(dr["GiaNiemYet"].ToString());
@@ -204,7 +204,8 @@ namespace QuanLyThuVien.GUI.UC
             string query;
             if (key.Equals("Mã Sách"))
             {
-                query = "select * from Sach where IDSach like '" + value + "%'";
+                query = "select * from Sach where IDSach like '" + value + "%' ";
+               // query = "select IDSach,TenSach, s.IDTheLoai,s.IDTacGia,s.IDNhaXuatBan from Sach s, TheLoai t, NhaXuatBan n, TacGia g where s.ID_TheLoai= t.ID_TheLoai and s.IDTacGia=g.IDTacGia and s.IDNhaXuatBan=n.IDNhaXuatBan and   IDSach like '" + value + "%'";
                 cmd = new SqlCommand(query, conn);
                 dr = cmd.ExecuteReader();
                 while (dr.Read())
@@ -212,9 +213,9 @@ namespace QuanLyThuVien.GUI.UC
                     addList(dr);
                 }
             }
-            else
+            if (key.Equals("Tên Sách"))
             {
-                query = "select * from Sach where IDSach like '" + value + "%'";
+                query = "select * from Sach where TenSach like '" + value + "%' ";
                 cmd = new SqlCommand(query, conn);
                 dr = cmd.ExecuteReader();
                 while (dr.Read())

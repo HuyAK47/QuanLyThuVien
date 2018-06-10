@@ -140,7 +140,7 @@ namespace QuanLyThuVien.GUI.UC
             string key = cmbTimKiem.Text.Trim();
             string value = txtTimKiem.Text.Trim();
             string query;
-            if (key.Equals("Mã Thể Loại"))
+            if (key.Equals("Mã thể loại"))
             {
                 query = "select * from Theloai where IDTheloai like '" + value + "%'";
                 cmd = new SqlCommand(query, conn);
@@ -150,9 +150,9 @@ namespace QuanLyThuVien.GUI.UC
                     addList(dr);
                 }
             }
-            else
+            if (key.Equals("Tên thể loại"))
             {
-                query = "select * from TheLoai where IDTheloai like '" + value + "%'";
+                query = "select * from Theloai where TenTheloai like '" + value + "%'";
                 cmd = new SqlCommand(query, conn);
                 dr = cmd.ExecuteReader();
                 while (dr.Read())

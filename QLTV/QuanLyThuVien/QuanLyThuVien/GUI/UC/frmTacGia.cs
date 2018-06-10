@@ -147,7 +147,7 @@ namespace QuanLyThuVien.GUI.UC
             string key = cmbTimKiem.Text.Trim();
             string value = txtTimKiem.Text.Trim();
             string query;
-            if (key.Equals("Mã Tác Giả"))
+            if (key.Equals("Mã tác giả"))
             {
                 query = "select * from TacGia where IDTacGia like '" + value + "%'";
                 cmd = new SqlCommand(query, conn);
@@ -157,9 +157,9 @@ namespace QuanLyThuVien.GUI.UC
                     addList(dr);
                 }
             }
-            else
+            if (key.Equals("Tên tác giả"))
             {
-                query = "select * from TacGia where IDTacGia like '" + value + "%'";
+                query = "select * from TacGia where TenTG like '" + value + "%'";
                 cmd = new SqlCommand(query, conn);
                 dr = cmd.ExecuteReader();
                 while (dr.Read())
