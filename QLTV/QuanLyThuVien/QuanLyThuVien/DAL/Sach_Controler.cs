@@ -45,5 +45,13 @@ namespace QuanLyThuVien.DAL
             cmd.Parameters.AddWithValue("@GiaNiemYet", s.GiaNiemYet);
             cmd.ExecuteNonQuery();
         }
+        public void deleteSach(Sach s)
+        {
+            openConnection();
+            string query = "delete Sach from IDSach = @MaSach";
+            SqlCommand cmd = new SqlCommand(query, Conn);
+            cmd.Parameters.AddWithValue("@MaSach", s.ID_Sach);
+            cmd.ExecuteNonQuery();
+        }
     }
 }

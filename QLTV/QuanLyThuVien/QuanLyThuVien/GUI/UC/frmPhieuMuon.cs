@@ -205,6 +205,20 @@ namespace QuanLyThuVien.GUI.UC
                 }
             }
         }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            DialogResult check = MessageBox.Show("Bạn có muốn xóa không", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (check == DialogResult.Yes)
+            {
+                ENTITY.PhieuMuon pm = new ENTITY.PhieuMuon();
+                pm.ID_PhieuMuon = txtMaPhieuMuon.Text.Trim();
+                DAL.PhieuMuon_Controler p = new DAL.PhieuMuon_Controler();
+                p.deletePhieuMuon(pm);
+            }
+            showLsvPhieuMuon();
+            lockControl();
+        }
     }
     }
 

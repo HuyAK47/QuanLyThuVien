@@ -210,5 +210,19 @@ namespace QuanLyThuVien.GUI.UC
                 }
             }
         }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            DialogResult check = MessageBox.Show("Bạn có muốn xóa không", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (check == DialogResult.Yes)
+            {
+                ENTITY.SinhVien sv = new ENTITY.SinhVien();
+                sv.ID_SinhVien = txtMaSV.Text.Trim();
+                DAL.SinhVien_Controler s = new DAL.SinhVien_Controler();
+                s.deleteSinhVien(sv);
+            }
+            showLsvSV();
+            lockControl();
+        }
     }
 }

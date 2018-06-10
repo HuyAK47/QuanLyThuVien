@@ -31,5 +31,14 @@ namespace QuanLyThuVien.DAL
             cmd.Parameters.AddWithValue("@HocVi", tg.HocVi);
             cmd.ExecuteNonQuery();
         }
+        public void deleteTacGia(TacGia tg)
+        {
+            openConnection();
+            string query = "delete TacGia from IDTacGia = @MaTG";
+            SqlCommand cmd = new SqlCommand();
+            cmd.Parameters.AddWithValue("@MaTG", tg.ID_TacGia);
+            cmd.ExecuteNonQuery();
+        }
+
     }
 }

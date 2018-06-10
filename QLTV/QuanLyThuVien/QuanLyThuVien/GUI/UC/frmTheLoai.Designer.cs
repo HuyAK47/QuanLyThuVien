@@ -35,7 +35,7 @@
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
-            this.txtMaLoaiSach = new System.Windows.Forms.TextBox();
+            this.txtMaTheLoai = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -63,7 +63,7 @@
             this.groupBox1.Controls.Add(this.btnXoa);
             this.groupBox1.Controls.Add(this.btnSua);
             this.groupBox1.Controls.Add(this.btnThem);
-            this.groupBox1.Controls.Add(this.txtMaLoaiSach);
+            this.groupBox1.Controls.Add(this.txtMaTheLoai);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Left;
@@ -119,6 +119,7 @@
             this.btnXoa.Text = "Xóa";
             this.btnXoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnSua
             // 
@@ -146,13 +147,13 @@
             this.btnThem.UseVisualStyleBackColor = true;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
-            // txtMaLoaiSach
+            // txtMaTheLoai
             // 
-            this.txtMaLoaiSach.Location = new System.Drawing.Point(139, 39);
-            this.txtMaLoaiSach.Multiline = true;
-            this.txtMaLoaiSach.Name = "txtMaLoaiSach";
-            this.txtMaLoaiSach.Size = new System.Drawing.Size(236, 25);
-            this.txtMaLoaiSach.TabIndex = 3;
+            this.txtMaTheLoai.Location = new System.Drawing.Point(139, 39);
+            this.txtMaTheLoai.Multiline = true;
+            this.txtMaTheLoai.Name = "txtMaTheLoai";
+            this.txtMaTheLoai.Size = new System.Drawing.Size(236, 25);
+            this.txtMaTheLoai.TabIndex = 3;
             // 
             // label1
             // 
@@ -318,7 +319,7 @@
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Button btnThem;
-        private System.Windows.Forms.TextBox txtMaLoaiSach;
+        private System.Windows.Forms.TextBox txtMaTheLoai;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox2;

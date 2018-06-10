@@ -174,6 +174,20 @@ namespace QuanLyThuVien.GUI.UC
                 }
             }
         }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            DialogResult check = MessageBox.Show("Bạn có muốn xóa không", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (check == DialogResult.Yes)
+            {
+                ENTITY.NhaXuatBan nxb = new ENTITY.NhaXuatBan();
+                nxb.ID_NhaXuatBan = txtMaNXB.Text.Trim();
+                DAL.NhaXuatBan_Controler nx = new DAL.NhaXuatBan_Controler();
+                nx.deleteNhaXuatBan(nxb);
+            }
+            showLsvNXB();
+            lockControl();
+        }
     }
     }
 

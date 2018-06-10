@@ -104,3 +104,22 @@ C:\Users\Admin\Desktop\QuanLyThuVien\QLTV\QuanLyThuVien\QuanLyThuVien\obj\Debug\
 C:\Users\Admin\Desktop\QuanLyThuVien\QLTV\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.Properties.Resources.resources
 C:\Users\Admin\Desktop\QuanLyThuVien\QLTV\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.csproj.GenerateResource.Cache
 C:\Users\Admin\Desktop\QuanLyThuVien\QLTV\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.GUI.UC.frmTroGiup.resources
+C:\Users\Suu Nguyen\Desktop\QuanLyThuVien\QLTV\QuanLyThuVien\QuanLyThuVien\bin\Debug\QuanLyThuVien.exe.config
+C:\Users\Suu Nguyen\Desktop\QuanLyThuVien\QLTV\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.exe
+C:\Users\Suu Nguyen\Desktop\QuanLyThuVien\QLTV\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.pdb
+C:\Users\Suu Nguyen\Desktop\QuanLyThuVien\QLTV\QuanLyThuVien\QuanLyThuVien\bin\Debug\QuanLyThuVien.exe
+C:\Users\Suu Nguyen\Desktop\QuanLyThuVien\QLTV\QuanLyThuVien\QuanLyThuVien\bin\Debug\QuanLyThuVien.pdb
+C:\Users\Suu Nguyen\Desktop\QuanLyThuVien\QLTV\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.csprojResolveAssemblyReference.cache
+C:\Users\Suu Nguyen\Desktop\QuanLyThuVien\QLTV\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.GUI.UC.frmChiTietPhieuMuon.resources
+C:\Users\Suu Nguyen\Desktop\QuanLyThuVien\QLTV\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.GUI.UC.frmNhanVien.resources
+C:\Users\Suu Nguyen\Desktop\QuanLyThuVien\QLTV\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.GUI.UC.frmNhaXuatBan.resources
+C:\Users\Suu Nguyen\Desktop\QuanLyThuVien\QLTV\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.GUI.UC.frmPhieuMuon.resources
+C:\Users\Suu Nguyen\Desktop\QuanLyThuVien\QLTV\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.GUI.UC.frmSach.resources
+C:\Users\Suu Nguyen\Desktop\QuanLyThuVien\QLTV\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.GUI.UC.frmSinhVien.resources
+C:\Users\Suu Nguyen\Desktop\QuanLyThuVien\QLTV\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.GUI.UC.frmTacGia.resources
+C:\Users\Suu Nguyen\Desktop\QuanLyThuVien\QLTV\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.GUI.UC.frmTheLoai.resources
+C:\Users\Suu Nguyen\Desktop\QuanLyThuVien\QLTV\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.GUI.UC.frmThongKe.resources
+C:\Users\Suu Nguyen\Desktop\QuanLyThuVien\QLTV\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.GUI.UC.frmTroGiup.resources
+C:\Users\Suu Nguyen\Desktop\QuanLyThuVien\QLTV\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.GUI.Menu.resources
+C:\Users\Suu Nguyen\Desktop\QuanLyThuVien\QLTV\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.Properties.Resources.resources
+C:\Users\Suu Nguyen\Desktop\QuanLyThuVien\QLTV\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.csproj.GenerateResource.Cache

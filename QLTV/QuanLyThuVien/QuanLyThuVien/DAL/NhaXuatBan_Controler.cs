@@ -33,5 +33,13 @@ namespace QuanLyThuVien.DAL
             cmd.Parameters.AddWithValue("@SDT", nxb.SDT);
             cmd.ExecuteNonQuery();
         }
+        public void deleteNhaXuatBan(NhaXuatBan nxb)
+        {
+            openConnection();
+            string query = "delete NhaXuatBan from IDNhaXuatBan = @MaNXB";
+            SqlCommand cmd = new SqlCommand(query, Conn);
+            cmd.Parameters.AddWithValue("@MaNXB", nxb.ID_NhaXuatBan);
+            cmd.ExecuteNonQuery();
+        }
     }
 }

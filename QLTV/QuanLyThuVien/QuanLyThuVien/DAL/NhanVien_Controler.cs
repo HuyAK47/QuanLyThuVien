@@ -41,5 +41,13 @@ namespace QuanLyThuVien.DAL
             cmd.Parameters.AddWithValue("@DiaChi", nv.DiaChi);
             cmd.ExecuteNonQuery();
         }
+        public void deleteNhanVien(NhanVien nv)
+        {
+            openConnection();
+            string query = "delete NhanVien from IDNhanVien = @MaNV";
+            SqlCommand cmd = new SqlCommand(query, Conn);
+            cmd.Parameters.AddWithValue("@MaNV", nv.ID_NhanVien);
+            cmd.ExecuteNonQuery();
+        }
     }
 }

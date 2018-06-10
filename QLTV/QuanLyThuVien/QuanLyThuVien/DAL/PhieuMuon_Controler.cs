@@ -40,5 +40,13 @@ namespace QuanLyThuVien.DAL
             cmd.Parameters.AddWithValue("@TienPhat", pm.TienPhat);
             cmd.ExecuteNonQuery();
         }
+        public void deletePhieuMuon(PhieuMuon pm)
+        {
+            openConnection();
+            string query = "delete PhieuMuon from IDPhieuMuon = @MaPM";
+            SqlCommand cmd = new SqlCommand(query, Conn);
+            cmd.Parameters.AddWithValue("@MaPM", pm.ID_PhieuMuon);
+            cmd.ExecuteNonQuery();
+        }
     }
 }

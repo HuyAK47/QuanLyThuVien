@@ -28,7 +28,7 @@ namespace QuanLyThuVien.GUI.UC
 
         public void lockControl()
         {
-            txtMaLoaiSach.Enabled = false;
+            txtMaTheLoai.Enabled = false;
             txtTenTheLoai.Enabled = false;
             btnThem.Enabled = true;
             btnXoa.Enabled = false;
@@ -40,7 +40,7 @@ namespace QuanLyThuVien.GUI.UC
 
         public void openControl()
         {
-            txtMaLoaiSach.Enabled = true;
+            txtMaTheLoai.Enabled = true;
             txtTenTheLoai.Enabled = true;
             btnLuu.Enabled = true;
             btnHuy.Enabled = true;
@@ -49,7 +49,7 @@ namespace QuanLyThuVien.GUI.UC
 
         public void resetControl()
         {
-            txtMaLoaiSach.ResetText();
+            txtMaTheLoai.ResetText();
             txtTenTheLoai.ResetText();
         }
 
@@ -74,14 +74,14 @@ namespace QuanLyThuVien.GUI.UC
             openControl();
             btnSua.Enabled = false;
             btnXoa.Enabled = false;
-            txtMaLoaiSach.Focus();
+            txtMaTheLoai.Focus();
         }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
             kt = false;
             openControl();
-            txtMaLoaiSach.Enabled = false;
+            txtMaTheLoai.Enabled = false;
             btnThem.Enabled = false;
             btnXoa.Enabled = false;
             txtTenTheLoai.Focus();
@@ -91,7 +91,7 @@ namespace QuanLyThuVien.GUI.UC
         {
             if (lsvTheLoai.SelectedItems.Count > 0)
             {
-                txtMaLoaiSach.Text = lsvTheLoai.SelectedItems[0].SubItems[0].Text;
+                txtMaTheLoai.Text = lsvTheLoai.SelectedItems[0].SubItems[0].Text;
                 txtTenTheLoai.Text = lsvTheLoai.SelectedItems[0].SubItems[1].Text;
 
 
@@ -108,7 +108,7 @@ namespace QuanLyThuVien.GUI.UC
         private void btnLuu_Click(object sender, EventArgs e)
         {
             ENTITY.TheLoai t = new ENTITY.TheLoai();
-            t.ID_TheLoai = txtMaLoaiSach.Text.Trim();
+            t.ID_TheLoai = txtMaTheLoai.Text.Trim();
             t.TenTheLoai = txtTenTheLoai.Text.Trim();
             DAL.TheLoai_Controler tl = new DAL.TheLoai_Controler();
             if (kt==true)
@@ -160,6 +160,20 @@ namespace QuanLyThuVien.GUI.UC
                     addList(dr);
                 }
             }
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            DialogResult check = MessageBox.Show("Bạn có muốn xóa không", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (check == DialogResult.Yes)
+            {
+                ENTITY.TheLoai tl = new ENTITY.TheLoai();
+                tl.ID_TheLoai = txtMaTheLoai.Text.Trim();
+                DAL.TheLoai_Controler t = new DAL.TheLoai_Controler();
+                t.deleteTheLoai(tl);
+            }
+            showLsvTheLoai();
+            lockControl();
         }
     }
 }

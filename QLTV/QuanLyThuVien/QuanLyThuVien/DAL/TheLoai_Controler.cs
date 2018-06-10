@@ -29,5 +29,14 @@ namespace QuanLyThuVien.DAL
             cmd.Parameters.AddWithValue("@TenTheLoai", tl.TenTheLoai);
             cmd.ExecuteNonQuery();
         }
+        public void deleteTheLoai(TheLoai tl)
+        {
+            openConnection();
+            string query = "delete TheLoai from IDTheLoai = @MaTL";
+            SqlCommand cmd = new SqlCommand(query, Conn);
+            cmd.Parameters.AddWithValue("@MaTL", tl.ID_TheLoai);
+            cmd.ExecuteNonQuery();
+        }
+
     }
 }

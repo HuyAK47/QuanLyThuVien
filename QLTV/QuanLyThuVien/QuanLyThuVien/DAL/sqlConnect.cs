@@ -10,7 +10,7 @@ namespace QuanLyThuVien.DAL
 {
     class sqlConnect
     {
-        private string strConn = @"Data Source=HIEP\SQLEXPRESS;Initial Catalog=qlThuVien;Integrated Security=True";
+        private string strConn = @"Data Source=DESKTOP-CAVR9S4\SQLEXPRESS;Initial Catalog=qlThuVien;Integrated Security=True";
         private SqlCommand cmd = null;
         private SqlConnection conn = null;
 
